@@ -1,0 +1,115 @@
+organisation du repertoire
+  index.php 
+       header("Location:pages/index.php")
+    assets
+      bootstrap
+      image
+    inc
+       connection.php
+       fonction.php
+    pages
+       index.php
+       list-employes.php
+       traitements.php
+       employe.php
+    sql
+      tous les sql dans le sujet
+    consignes
+      pdf
+      Autre
+
+SQL
+  Chemin des source dans Select (employees.sql)
+  insert bd employees.sql
+  source employees.sql 
+
+CODE
+includer
+    connection.php
+      copier coller le code 
+      change le bd
+    fonction.php
+       function qui affiche le departments
+       function qui affiche les liste des employer
+        
+index.php
+   header('Location:page/index.php')
+
+page
+  index.php
+    afficher les liste de departments 
+    les bare de recherche
+    num lien vers la list_employees.php (?num)
+  list_employees.php
+    appeler le fonction  aff_liste_employer($num) pour aficher la liste employer 
+    num d employe=lien vers employe.php pour le detaile de l employe
+
+CSS
+ Bootstrap
+    copier coler le dossier bootstrap dans assets
+    lien a chaque page
+  index.php 
+    link et script du bootstrap
+    tableau pour lister la liste de departments
+    et le formulaire
+    lien vers la list_employees.php  
+  list_employees.php
+    tableau pour lister le list_employees
+  employe.php
+    identite employer profil,nom,prenom,etc
+    tableau pour lister le historique des salaires
+
+--Ajouter une colonne nombre employé sur la liste des départements--
+  modifier la fonction aff_dep pour compter ces employe
+
+  V3
+Page Homme et Famme
+sql
+ page view.sql
+    contient tous les view
+    view pour les liste des employer
+    view pour compter les liste des employes 
+  function.php
+    fonction sex_man et sex_wom ,appeler le view pour les liste des employer et view pour compter les liste des employes 
+    avec condition where genre = m ou f est dep=$num
+   list_employees.php
+    lien vers 
+        man.php > Homme
+        wom.php > Famme
+    man.php 
+       appeller la fonction pour lister les donnes 
+      afficher les liste des employer avec leur nb total
+    wom.php 
+      appeller la fonction pour lister les donnes 
+      afficher les liste des employer avec leur nb total
+
+
+  V4
+1/Dans la fiche de l'employé, mettre un bouton "changer de département". Cela va ouvrir un formulaire
+
+    employee.php
+   ajouter un bouton dans la fiche de l'employé = lien vers changement_dept.php
+
+   changement_dept.php
+
+   formulaire qui change le departments de l'employe , vas vers traitement_change.php
+
+   traitement_change.php
+   appeler la fonction pour modifier le departement
+
+   fonction.php
+   ajouter la fonction aff_dep_non($var) , variante de aff_dep , saufe pour le departement ($var) argument
+   de meme pour aff_dep_oui mais seulement si e departement est egal a $var
+   ajouter la fonction change_dept 
+
+V4
+2-a- 
+dans employe.php Lien vers une autre page de formulaire pour devenir un manager
+formulaire.php 
+    pour inserer l identite du employees
+      Nom
+      prenom
+      nom du departments
+      Date 
+fonction.php
+Fontion insert le new manager

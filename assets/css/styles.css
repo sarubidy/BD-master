@@ -1,0 +1,11 @@
+.table-index a{
+  text-decoration: none;
+}
+
+.ok {
+  color: #3b6950;
+}
+.error
+{
+  color: red;
+}
